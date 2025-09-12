@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-//This is Hospital management application
+//This is Hospital management application.
 @WebServlet("/hello")
 public class HelloServlet extends HttpServlet {
     @Override
