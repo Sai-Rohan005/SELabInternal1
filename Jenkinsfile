@@ -7,13 +7,8 @@ pipeline {
         stage('git repo & clean') {
             steps {
                 script {
-                    if (isUnix()) {
-                        sh "git clone https://github.com/Sai-Rohan005/SELabInternal1.git"
-                        sh "mvn clean"
-                    } else {
-                        bat "git clone https://github.com/Sai-Rohan005/SELabInternal1.git"
-                        bat "mvn clean"
-                    }
+                    // Only clean, no need to clone again
+                    sh 'mvn clean'
                 }
             }
         }
@@ -21,9 +16,9 @@ pipeline {
             steps {
                 script {
                     if (isUnix()) {
-                        sh "mvn install"
+                        sh 'mvn install'
                     } else {
-                        bat "mvn install"
+                        bat 'mvn install'
                     }
                 }
             }
@@ -32,9 +27,9 @@ pipeline {
             steps {
                 script {
                     if (isUnix()) {
-                        sh "mvn test"
+                        sh 'mvn test'
                     } else {
-                        bat "mvn test"
+                        bat 'mvn test'
                     }
                 }
             }
@@ -43,9 +38,9 @@ pipeline {
             steps {
                 script {
                     if (isUnix()) {
-                        sh "mvn package"
+                        sh 'mvn package'
                     } else {
-                        bat "mvn package"
+                        bat 'mvn package'
                     }
                 }
             }
