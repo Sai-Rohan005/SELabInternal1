@@ -8,10 +8,10 @@ pipeline {
             steps {
                 script {
                     if (isUnix()) {
-                        sh "git clone https://your-github-link"
+                        sh "git clone https://github.com/Sai-Rohan005/SELabInternal1.git"
                         sh "mvn clean -f mavenjava"
                     } else {
-                        bat "git clone https://your-github-link"
+                        bat "git clone https://github.com/Sai-Rohan005/SELabInternal1.git"
                         bat "mvn clean -f mavenjava"
                     }
                 }
