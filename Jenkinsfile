@@ -9,10 +9,10 @@ pipeline {
                 script {
                     if (isUnix()) {
                         sh "git clone https://github.com/Sai-Rohan005/SELabInternal1.git"
-                        sh "mvn clean -f mavenjava"
+                        sh "mvn clean"
                     } else {
                         bat "git clone https://github.com/Sai-Rohan005/SELabInternal1.git"
-                        bat "mvn clean -f mavenjava"
+                        bat "mvn clean"
                     }
                 }
             }
@@ -21,9 +21,9 @@ pipeline {
             steps {
                 script {
                     if (isUnix()) {
-                        sh "mvn install -f mavenjava"
+                        sh "mvn install"
                     } else {
-                        bat "mvn install -f mavenjava"
+                        bat "mvn install"
                     }
                 }
             }
@@ -32,9 +32,9 @@ pipeline {
             steps {
                 script {
                     if (isUnix()) {
-                        sh "mvn test -f mavenjava"
+                        sh "mvn test"
                     } else {
-                        bat "mvn test -f mavenjava"
+                        bat "mvn test"
                     }
                 }
             }
@@ -43,9 +43,9 @@ pipeline {
             steps {
                 script {
                     if (isUnix()) {
-                        sh "mvn package -f mavenjava"
+                        sh "mvn package"
                     } else {
-                        bat "mvn package -f mavenjava"
+                        bat "mvn package"
                     }
                 }
             }
