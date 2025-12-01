@@ -1,24 +1,46 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'MAVEN_HOME'  // Make sure this matches your Jenkins Maven tool name
+    }
+
     stages {
-        stage('git clone') {
+        stage('Welcome') {
             steps {
-               //bat rmi /s /q MavenJavaDemo
-               bat "git clone https://github.com/Sai-Rohan005/SELabinternal1.git"
-               bat "mvn clean -f SELabInternal1"
+                echo "Welcome to Jenkins portol !"
             }
         }
-        stage('install') {
+
+        stage('Clean') {
             steps {
-               bat "mvn install -f SELabInternal1"
+                bat "mvn clean -f ."
             }
         }
-        stage('test'){
-            steps{
-                bat "mvn test -f SELabInternal1"
+
+        stage('Install') {
+            steps {
+                bat "mvn install"
             }
-            
+        }
+
+        stage('Test') {
+            steps {
+                bat "mvn test"
+            }
+        }
+
+        stage('Package') {
+            steps {
+                bat "mvn package"
+                echo "Build Number: ${env.BUILD_NUMBER}"
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo "Deployment steps go here."
+            }
         }
     }
 }
