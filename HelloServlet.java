@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 //This is Hospital management application.
-//**
+//**plaa mtch ikwo nyqe
 @WebServlet("/hello")
 public class HelloServlet extends HttpServlet {
     @Override
